@@ -5,6 +5,7 @@ import { TURNS } from "./constantes"
 import { checkWinner,checkEndGame } from "./logic/board"
 import { WinnerModal } from "./componentes/WinnerModal"
 import Board from "./componentes/Board"
+import Footer from "./componentes/Footer"
 
 function App() {
   const [board,setBoard] = useState(()=>{
@@ -55,27 +56,27 @@ function App() {
     }
   }
   return(
-    <main className="board">
+    <><main className="board">
       <h1>Bienvenido al Triqui</h1>
       <button onClick={resetGame}>Reset del juego</button>
       <section className="game">
-        {
-          board.map((_,index)=>{
-            return(
-              <Square key={index} index={index} 
+        {board.map((_, index) => {
+          return (
+            <Square key={index} index={index}
               updateBoard={updateBoard}> {board[index]} </Square>
-            )
-          })
-        }
+          )
+        })}
       </section>
-     
+
       <section className="turn">
-        <Square isSelected={turn===TURNS.x} > {TURNS.x}</Square>
-        <Square isSelected={turn===TURNS.o}> {TURNS.o}</Square>
+        <Square isSelected={turn === TURNS.x}> {TURNS.x}</Square>
+        <Square isSelected={turn === TURNS.o}> {TURNS.o}</Square>
 
       </section>
-     <WinnerModal resetGame={resetGame} winner={winner}/>
-    </main>
+      <WinnerModal resetGame={resetGame} winner={winner} />
+
+    </main><Footer /></>
+    
   )
   
 }

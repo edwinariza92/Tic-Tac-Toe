@@ -129,3 +129,12 @@ body {
   cursor: pointer;
   font-size: 48px;
 }
+
+.footer {
+  display: flex; 
+   flex-direction: row; 
+   justify-content: center; 
+   padding: 32px; 
+   background: url(../public/background.jpg); 
+   width: 700px; 
+}
