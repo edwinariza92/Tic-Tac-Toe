@@ -1,9 +1,9 @@
 
 const Footer = ()=>{
     return(
-        <h6 className="footer">
+        <h4 className="footer">
             Desarrollado por Edwin ariza 2024
-        </h6>
+        </h4>
     )
 }
 
